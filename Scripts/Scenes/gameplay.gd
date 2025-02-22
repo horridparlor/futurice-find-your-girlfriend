@@ -8,10 +8,15 @@ extends Gameplay
 @onready var game_over_wait_timer : Timer = $Timers/GameOverWait;
 @onready var stream_player : AudioStreamPlayer = $AudioStreamPlayer;
 @onready var backframe : ColorRect = $Backframe;
+@onready var backdrops_layer : Node2D = $BackdropsLayer;
 
 func on_init() -> void:
 	change_music();
 	spawn_player();
+	spawn_backdrops();
+
+func spawn_backdrops() -> void:
+	System.Instance.load_child(BACKDROPS_PATH_PREFIX + str(level_index) + BACKDROPS_PATH_SUFFIX, backdrops_layer);
 
 func change_music():
 	if level_index == GameplayEnums.LAST_LEVEL:
@@ -27,6 +32,7 @@ func spawn_player() -> void:
 			player.set_speed(4);
 		GameplayEnums.RAPIDFIRE_LEVEL:
 			player.alter_shoot_speed(4);
+	player.died.connect(on_player_died);
 	
 
 func _process(delta : float) -> void:
@@ -107,7 +113,12 @@ func on_despawn_enemy(enemy : Enemy) -> void:
 	enemies.erase(enemy);
 	enemy.queue_free();
 
+func on_player_died() -> void:
+	on_player_hit(false);
+
 func on_player_hit(is_girlfriend : bool) -> void:
+	if game_over:
+		return;
 	game_over = true;
 	on_victory() if is_girlfriend else on_death();
 	game_over_wait_timer.start();

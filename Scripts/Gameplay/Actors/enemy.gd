@@ -11,6 +11,8 @@ func _on_hit_box_area_entered(area: Area2D) -> void:
 		is_hit = true;
 	elif area.is_in_group("Player"):
 		emit_signal("player_hit", is_girlfriend());
+	elif area.is_in_group("Monster"):
+		on_death();
 
 func scale_up(multiplier : float) -> void:
 	size_class *= multiplier;

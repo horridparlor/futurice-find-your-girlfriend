@@ -22,3 +22,8 @@ func _on_shoot_cooldown_timeout() -> void:
 	halo_effect.queue_free();
 	is_shooting = false;
 	halo_collision.shape.radius = 0;
+
+
+func _on_hit_box_area_entered(area: Area2D) -> void:
+	if area.is_in_group("Monster"):
+		on_death();

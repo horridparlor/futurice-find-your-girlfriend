@@ -1,6 +1,8 @@
 extends Actor
 class_name Player
 
+signal died;
+
 const HALO_EFFECT_PATH : String = "res://Prefabs/Gameplay/ParticleEffects/halo_effect.tscn";
 
 var is_shooting;
@@ -15,6 +17,9 @@ func _ready() -> void:
 func alter_shoot_speed(multiplier : float) -> void:
 	pass;
 
+func on_death() -> void:
+	emit_signal("died");
+
 func shoot(multiplier : float) -> void:
 	is_shooting = true;
 	on_shoot(multiplier);
@@ -23,17 +28,19 @@ func on_shoot(multiplier : float) -> void:
 	pass;
 
 func move_up(delta : float) -> void:
-	position.y -= speed * delta;
-	fix_position();
+	move_to(Vector2(position.x, position.y - speed * delta));
 
 func move_left(delta : float) -> void:
-	position.x -= speed * delta;
-	fix_position();
+	move_to(Vector2(position.x - speed * delta, position.y));
 
 func move_down(delta : float) -> void:
-	position.y += speed * delta;
-	fix_position();
+	move_to(Vector2(position.x, position.y + speed * delta));
 	
 func move_right(delta : float) -> void:
-	position.x += speed * delta;
-	fix_position();
+	move_to(Vector2(position.x + speed * delta, position.y));
+
+func move_to(target_position : Vector2) -> void:
+	target_position = get_fixed_position(target_position);
+	if is_colliding_with_obstacle(target_position):
+		return;
+	position = target_position;

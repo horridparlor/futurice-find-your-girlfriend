@@ -13,10 +13,14 @@ var is_hit : bool;
 
 func _ready() -> void:
 	size_class = -40;
-	set_speed();
+	set_speed();var shape = RectangleShape2D.new()
+	shape.size = Vector2(40, 40);
 
 func move(delta : float):
-	position = position.move_toward(target_position, speed * delta);
+	var move_to : Vector2 = position.move_toward(target_position, speed * delta);
+	if is_colliding_with_obstacle(move_to, "EnemyObstacle"):
+		return;
+	position = move_to;
 	if System.Vectors.equal(position, target_position):
 		on_death();
 		

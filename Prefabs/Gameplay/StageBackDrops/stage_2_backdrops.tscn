@@ -1,0 +1,184 @@
+[gd_scene load_steps=4 format=3 uid="uid://hcopi65lgbrb"]
+
+[ext_resource type="PackedScene" uid="uid://bkcadb84hemvn" path="res://Prefabs/Gameplay/Backdrops/frog.tscn" id="1_4wbqw"]
+[ext_resource type="PackedScene" uid="uid://blorkgnsg3tj2" path="res://Prefabs/Gameplay/Backdrops/bush.tscn" id="1_oynfe"]
+[ext_resource type="PackedScene" uid="uid://btxnuk3n3ckek" path="res://Prefabs/Gameplay/Backdrops/stone.tscn" id="2_rssdh"]
+
+[node name="Stage2Backdrops" type="Node2D"]
+
+[node name="Frog" parent="." instance=ExtResource("1_4wbqw")]
+position = Vector2(-728, -262)
+
+[node name="Bush" parent="." instance=ExtResource("1_oynfe")]
+position = Vector2(-93, -78)
+
+[node name="Stone2" parent="." instance=ExtResource("2_rssdh")]
+position = Vector2(74, -56)
+
+[node name="Stone3" parent="." instance=ExtResource("2_rssdh")]
+position = Vector2(-67, 58)
+
+[node name="Bush2" parent="." instance=ExtResource("1_oynfe")]
+position = Vector2(84, -47)
+
+[node name="Bush3" parent="." instance=ExtResource("1_oynfe")]
+position = Vector2(72, 33)
+
+[node name="Stone4" parent="." instance=ExtResource("2_rssdh")]
+position = Vector2(-18, -144)
+
+[node name="Stone5" parent="." instance=ExtResource("2_rssdh")]
+position = Vector2(68, 57)
+
+[node name="Stone6" parent="." instance=ExtResource("2_rssdh")]
+position = Vector2(167, -110)
+
+[node name="Stone10" parent="." instance=ExtResource("2_rssdh")]
+position = Vector2(439, -318)
+
+[node name="Stone7" parent="." instance=ExtResource("2_rssdh")]
+position = Vector2(-243, 237)
+
+[node name="Stone8" parent="." instance=ExtResource("2_rssdh")]
+position = Vector2(-421, 304)
+
+[node name="Stone9" parent="." instance=ExtResource("2_rssdh")]
+position = Vector2(478, 531)
+
+[node name="Bush4" parent="." instance=ExtResource("1_oynfe")]
+position = Vector2(100, 58)
+
+[node name="Bush12" parent="." instance=ExtResource("1_oynfe")]
+position = Vector2(462, -315)
+
+[node name="Bush13" parent="." instance=ExtResource("1_oynfe")]
+position = Vector2(681, -75)
+
+[node name="Stone17" parent="." instance=ExtResource("2_rssdh")]
+position = Vector2(-656, -201)
+
+[node name="Stone18" parent="." instance=ExtResource("2_rssdh")]
+position = Vector2(-906, 499)
+
+[node name="Bush14" parent="." instance=ExtResource("1_oynfe")]
+position = Vector2(950, -20)
+
+[node name="Bush15" parent="." instance=ExtResource("1_oynfe")]
+position = Vector2(803, 230)
+
+[node name="Stone12" parent="." instance=ExtResource("2_rssdh")]
+position = Vector2(801, 252)
+
+[node name="Bush16" parent="." instance=ExtResource("1_oynfe")]
+position = Vector2(777, 254)
+
+[node name="Bush17" parent="." instance=ExtResource("1_oynfe")]
+position = Vector2(-757, 47)
+
+[node name="Bush18" parent="." instance=ExtResource("1_oynfe")]
+position = Vector2(-774, 71)
+
+[node name="Bush19" parent="." instance=ExtResource("1_oynfe")]
+position = Vector2(-741, 78)
+
+[node name="Bush20" parent="." instance=ExtResource("1_oynfe")]
+position = Vector2(-154, -407)
+
+[node name="Bush21" parent="." instance=ExtResource("1_oynfe")]
+position = Vector2(-332, -533)
+
+[node name="Bush22" parent="." instance=ExtResource("1_oynfe")]
+position = Vector2(-603, -550)
+
+[node name="Bush23" parent="." instance=ExtResource("1_oynfe")]
+position = Vector2(-620, -510)
+
+[node name="Bush24" parent="." instance=ExtResource("1_oynfe")]
+position = Vector2(201, -474)
+
+[node name="Bush25" parent="." instance=ExtResource("1_oynfe")]
+position = Vector2(429, -555)
+
+[node name="Bush26" parent="." instance=ExtResource("1_oynfe")]
+position = Vector2(503, 537)
+
+[node name="Bush27" parent="." instance=ExtResource("1_oynfe")]
+position = Vector2(-510, 435)
+
+[node name="Bush28" parent="." instance=ExtResource("1_oynfe")]
+position = Vector2(-401, 304)
+
+[node name="Bush29" parent="." instance=ExtResource("1_oynfe")]
+position = Vector2(-380, 171)
+
+[node name="Bush30" parent="." instance=ExtResource("1_oynfe")]
+position = Vector2(-406, 204)
+
+[node name="Bush31" parent="." instance=ExtResource("1_oynfe")]
+position = Vector2(847, -312)
+
+[node name="Bush32" parent="." instance=ExtResource("1_oynfe")]
+position = Vector2(871, -521)
+
+[node name="Bush33" parent="." instance=ExtResource("1_oynfe")]
+position = Vector2(-775, 395)
+
+[node name="Bush34" parent="." instance=ExtResource("1_oynfe")]
+position = Vector2(-830, 445)
+
+[node name="Bush35" parent="." instance=ExtResource("1_oynfe")]
+position = Vector2(-813, 471)
+
+[node name="Bush36" parent="." instance=ExtResource("1_oynfe")]
+position = Vector2(-832, 497)
+
+[node name="Bush37" parent="." instance=ExtResource("1_oynfe")]
+position = Vector2(-808, 507)
+
+[node name="Bush38" parent="." instance=ExtResource("1_oynfe")]
+position = Vector2(-827, 536)
+
+[node name="Bush39" parent="." instance=ExtResource("1_oynfe")]
+position = Vector2(384, 557)
+
+[node name="Bush5" parent="." instance=ExtResource("1_oynfe")]
+position = Vector2(-3, 78)
+
+[node name="Bush6" parent="." instance=ExtResource("1_oynfe")]
+position = Vector2(-84, 67)
+
+[node name="Bush7" parent="." instance=ExtResource("1_oynfe")]
+position = Vector2(-42, -135)
+
+[node name="Bush8" parent="." instance=ExtResource("1_oynfe")]
+position = Vector2(-637, -201)
+
+[node name="Bush40" parent="." instance=ExtResource("1_oynfe")]
+position = Vector2(-709, -230)
+
+[node name="Bush9" parent="." instance=ExtResource("1_oynfe")]
+position = Vector2(-632, -255)
+
+[node name="Bush10" parent="." instance=ExtResource("1_oynfe")]
+position = Vector2(-748, -226)
+
+[node name="Bush11" parent="." instance=ExtResource("1_oynfe")]
+position = Vector2(-713, -210)
+
+[node name="Stone11" parent="." instance=ExtResource("2_rssdh")]
+position = Vector2(828, -285)
+
+[node name="Stone13" parent="." instance=ExtResource("2_rssdh")]
+position = Vector2(-396, -417)
+
+[node name="Stone14" parent="." instance=ExtResource("2_rssdh")]
+position = Vector2(-266, -537)
+
+[node name="Stone15" parent="." instance=ExtResource("2_rssdh")]
+position = Vector2(-642, -481)
+
+[node name="Stone16" parent="." instance=ExtResource("2_rssdh")]
+position = Vector2(-960, -239)
+
+[node name="Stone" parent="." instance=ExtResource("2_rssdh")]
+position = Vector2(-98, -49)

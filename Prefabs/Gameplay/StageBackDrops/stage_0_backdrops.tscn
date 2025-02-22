@@ -1,0 +1,47 @@
+[gd_scene load_steps=2 format=3 uid="uid://cyqlskwpdi8pg"]
+
+[ext_resource type="PackedScene" uid="uid://blorkgnsg3tj2" path="res://Prefabs/Gameplay/Backdrops/bush.tscn" id="1_lgcpm"]
+
+[node name="Stage0Backdrops" type="Node2D"]
+
+[node name="Bush15" parent="." instance=ExtResource("1_lgcpm")]
+position = Vector2(545, 243)
+
+[node name="Bush16" parent="." instance=ExtResource("1_lgcpm")]
+position = Vector2(-318, 549)
+
+[node name="Bush17" parent="." instance=ExtResource("1_lgcpm")]
+position = Vector2(81, -55)
+
+[node name="Bush18" parent="." instance=ExtResource("1_lgcpm")]
+position = Vector2(-938, -114)
+
+[node name="Bush19" parent="." instance=ExtResource("1_lgcpm")]
+position = Vector2(314, -370)
+
+[node name="Bush20" parent="." instance=ExtResource("1_lgcpm")]
+position = Vector2(386, -427)
+
+[node name="Bush21" parent="." instance=ExtResource("1_lgcpm")]
+position = Vector2(-385, 147)
+
+[node name="Bush22" parent="." instance=ExtResource("1_lgcpm")]
+position = Vector2(-599, -461)
+
+[node name="Bush23" parent="." instance=ExtResource("1_lgcpm")]
+position = Vector2(-785, 378)
+
+[node name="Bush24" parent="." instance=ExtResource("1_lgcpm")]
+position = Vector2(919, -302)
+
+[node name="Bush25" parent="." instance=ExtResource("1_lgcpm")]
+position = Vector2(805, 471)
+
+[node name="Bush26" parent="." instance=ExtResource("1_lgcpm")]
+position = Vector2(748, 530)
+
+[node name="Bush27" parent="." instance=ExtResource("1_lgcpm")]
+position = Vector2(977, 515)
+
+[node name="Bush28" parent="." instance=ExtResource("1_lgcpm")]
+position = Vector2(-178, -314)

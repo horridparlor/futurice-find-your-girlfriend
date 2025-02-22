@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://btxnuk3n3ckek"]
+
+[ext_resource type="Texture2D" uid="uid://c5ds328yx47cw" path="res://Assets/Sprites/Backdrops/stone.png" id="1_ebtkx"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5krnp"]
+radius = 14.1324
+height = 46.1661
+
+[node name="Stone" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ebtkx")
+
+[node name="ObstacleArea" type="Area2D" parent="." groups=["EnemyObstacle", "Obstacle"]]
+
+[node name="ObstacleCollision" type="CollisionShape2D" parent="ObstacleArea"]
+rotation = -1.67552
+shape = SubResource("CapsuleShape2D_5krnp")

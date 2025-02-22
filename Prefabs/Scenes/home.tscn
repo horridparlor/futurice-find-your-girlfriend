@@ -6,3 +6,51 @@
 script = ExtResource("1_sbsdg")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="SceneLayer" type="Node2D" parent="."]
+
+[node name="Borders" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Borders"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 960.0
+offset_top = -540.0
+offset_right = 1920.0
+offset_bottom = 540.0
+grow_horizontal = 2
+color = Color(0.0196078, 0.0196078, 0.0196078, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Borders"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -1920.0
+offset_top = -540.0
+offset_right = -960.0
+offset_bottom = 540.0
+grow_horizontal = 2
+color = Color(0.0214346, 0.0214346, 0.0214346, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Borders"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -1920.0
+offset_top = -1620.0
+offset_right = 1920.0
+offset_bottom = -540.0
+grow_horizontal = 2
+color = Color(0.0214346, 0.0214346, 0.0214346, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Borders"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -1920.0
+offset_top = 540.0
+offset_right = 1920.0
+offset_bottom = 1620.0
+grow_horizontal = 2
+color = Color(0.0214346, 0.0214346, 0.0214346, 1)

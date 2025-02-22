@@ -1,5 +1,6 @@
 extends Node
 
+const Display : int = 1;
 const Instance : GDScript = preload("res://Scripts/System/instance.gd");
 const Json : GDScript = preload("res://Scripts/System/json.gd");
 const Random : GDScript = preload("res://Scripts/System/random.gd");

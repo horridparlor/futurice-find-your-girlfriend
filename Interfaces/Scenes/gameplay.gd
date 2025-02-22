@@ -9,6 +9,8 @@ const INSTRUCTIONS_FADING_SPEED : float = 1.1;
 const VICTORY_SCREEN_PATH : String = "res://Prefabs/Gameplay/EndScreens/victory_screen.tscn";
 const DEATH_SCREEN_PATH : String = "res://Prefabs/Gameplay/EndScreens/death_screen.tscn";
 const LAST_LEVEL_THEME_PATH : String = "res://Assets/Music/TanLines.mp3";
+const BACKDROPS_PATH_PREFIX : String = "res://Prefabs/Gameplay/StageBackDrops/stage_";
+const BACKDROPS_PATH_SUFFIX : String = "_backdrops.tscn";
 
 const MAX_ENEMIES_PER_LEVEL : Dictionary = {
 	0: 4,
