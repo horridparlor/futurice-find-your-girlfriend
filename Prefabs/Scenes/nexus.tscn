@@ -78,7 +78,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 1
 theme_override_fonts/font = ExtResource("3_lcr7j")
 theme_override_font_sizes/font_size = 40
-text = "Level Selection"
+text = "Level Selection (ENTER)"
 
 [node name="Label2" type="Label" parent="."]
 offset_left = 761.0

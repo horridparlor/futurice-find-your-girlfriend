@@ -125,7 +125,7 @@ func check_if_game_started() -> bool:
 		Input.is_action_pressed("ui_left") or Input.is_key_pressed(KEY_A) or \
 		Input.is_action_pressed("ui_down") or Input.is_key_pressed(KEY_S) or \
 		Input.is_action_pressed("ui_right") or Input.is_key_pressed(KEY_D) or \
-		Input.is_key_pressed(KEY_H);
+		Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) or Input.is_key_pressed(KEY_H);
 
 func fade_instructions(delta : float) -> void:
 	instructions_layer.modulate.a -= delta / INSTRUCTIONS_FADING_SPEED;
@@ -136,7 +136,7 @@ func fade_instructions(delta : float) -> void:
 func handle_shooting() -> void:
 	if player.is_shooting:
 		return;
-	if Input.is_key_pressed(KEY_H):
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) or Input.is_key_pressed(KEY_H):
 		player.shoot(3 if level_index == GameplayEnums.SUPERMAN_LEVEL else 1);
 
 func _on_enemy_spawn_wait_timeout() -> void:
