@@ -1,3 +1,56 @@
-[gd_scene format=3 uid="uid://dkdg114igu47n"]
+[gd_scene load_steps=5 format=3 uid="uid://dkdg114igu47n"]
 
-[node name="Stage2Backdrops" type="Node2D"]
+[ext_resource type="PackedScene" uid="uid://blorkgnsg3tj2" path="res://Prefabs/Gameplay/Backdrops/bush.tscn" id="1_nkxu5"]
+[ext_resource type="PackedScene" uid="uid://bj4f8aeon2n2d" path="res://Prefabs/Gameplay/Backdrops/mountain.tscn" id="2_72bnd"]
+[ext_resource type="PackedScene" uid="uid://bkcadb84hemvn" path="res://Prefabs/Gameplay/Backdrops/frog.tscn" id="3_ehvxe"]
+[ext_resource type="PackedScene" uid="uid://btxnuk3n3ckek" path="res://Prefabs/Gameplay/Backdrops/stone.tscn" id="4_it2gi"]
+
+[node name="Stage9Backdrops" type="Node2D"]
+
+[node name="Bush" parent="." instance=ExtResource("1_nkxu5")]
+position = Vector2(-633, -294)
+
+[node name="Bush7" parent="." instance=ExtResource("1_nkxu5")]
+position = Vector2(-904, -532)
+
+[node name="Bush8" parent="." instance=ExtResource("1_nkxu5")]
+position = Vector2(-878, -427)
+
+[node name="Bush9" parent="." instance=ExtResource("1_nkxu5")]
+position = Vector2(-750, -463)
+
+[node name="Bush2" parent="." instance=ExtResource("1_nkxu5")]
+position = Vector2(573, 130)
+
+[node name="Bush3" parent="." instance=ExtResource("1_nkxu5")]
+position = Vector2(-574, 532)
+
+[node name="Bush4" parent="." instance=ExtResource("1_nkxu5")]
+position = Vector2(522, -429)
+
+[node name="Bush5" parent="." instance=ExtResource("1_nkxu5")]
+position = Vector2(479, -382)
+
+[node name="Bush6" parent="." instance=ExtResource("1_nkxu5")]
+position = Vector2(-444, -36)
+
+[node name="Mountain" parent="." instance=ExtResource("2_72bnd")]
+position = Vector2(574, -318)
+
+[node name="Mountain2" parent="." instance=ExtResource("2_72bnd")]
+position = Vector2(772, -522)
+
+[node name="Frog" parent="." instance=ExtResource("3_ehvxe")]
+position = Vector2(-126, -11)
+
+[node name="Frog2" parent="." instance=ExtResource("3_ehvxe")]
+position = Vector2(137, -11)
+
+[node name="Frog3" parent="." instance=ExtResource("3_ehvxe")]
+position = Vector2(-2, 87)
+
+[node name="Frog4" parent="." instance=ExtResource("3_ehvxe")]
+position = Vector2(2, -102)
+
+[node name="Stone" parent="." instance=ExtResource("4_it2gi")]
+position = Vector2(298, 39)

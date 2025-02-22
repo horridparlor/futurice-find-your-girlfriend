@@ -1,14 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://bktrv3c2ka8jo"]
+[gd_scene load_steps=6 format=3 uid="uid://bktrv3c2ka8jo"]
 
 [ext_resource type="Script" path="res://Scripts/Scenes/gameplay.gd" id="1_2xrfu"]
-[ext_resource type="PackedScene" uid="uid://btxnuk3n3ckek" path="res://Prefabs/Gameplay/Backdrops/stone.tscn" id="2_03s5a"]
 [ext_resource type="AudioStream" uid="uid://bh5bw42xvfgwe" path="res://Assets/Music/GameplayTheme.mp3" id="2_yybwi"]
 [ext_resource type="FontFile" uid="uid://yxygawtc05lh" path="res://Assets/FontFiles/Montserrat/Montserrat-SemiBold.ttf" id="3_u0we0"]
 [ext_resource type="FontFile" uid="uid://ckd00l7rafrhj" path="res://Assets/FontFiles/Montserrat/Montserrat-MediumItalic.ttf" id="4_qobei"]
 [ext_resource type="FontFile" uid="uid://di4abqxuqvl4h" path="res://Assets/FontFiles/Montserrat/Montserrat-ExtraBold.ttf" id="5_v5est"]
-[ext_resource type="PackedScene" uid="uid://bj4f8aeon2n2d" path="res://Prefabs/Gameplay/Backdrops/mountain.tscn" id="6_cu355"]
-[ext_resource type="PackedScene" uid="uid://bkcadb84hemvn" path="res://Prefabs/Gameplay/Backdrops/frog.tscn" id="6_t7kfm"]
-[ext_resource type="PackedScene" uid="uid://blorkgnsg3tj2" path="res://Prefabs/Gameplay/Backdrops/bush.tscn" id="7_yt606"]
 
 [node name="Gameplay" type="Node2D"]
 script = ExtResource("1_2xrfu")
@@ -75,54 +71,6 @@ wait_time = 2.0
 [node name="GameOverWait" type="Timer" parent="Timers"]
 
 [node name="OverLayer" type="Node2D" parent="."]
-
-[node name="Bush" parent="OverLayer" instance=ExtResource("7_yt606")]
-position = Vector2(-633, -294)
-
-[node name="Bush7" parent="OverLayer" instance=ExtResource("7_yt606")]
-position = Vector2(-904, -532)
-
-[node name="Bush8" parent="OverLayer" instance=ExtResource("7_yt606")]
-position = Vector2(-878, -427)
-
-[node name="Bush9" parent="OverLayer" instance=ExtResource("7_yt606")]
-position = Vector2(-750, -463)
-
-[node name="Bush2" parent="OverLayer" instance=ExtResource("7_yt606")]
-position = Vector2(573, 130)
-
-[node name="Bush3" parent="OverLayer" instance=ExtResource("7_yt606")]
-position = Vector2(-574, 532)
-
-[node name="Bush4" parent="OverLayer" instance=ExtResource("7_yt606")]
-position = Vector2(522, -429)
-
-[node name="Bush5" parent="OverLayer" instance=ExtResource("7_yt606")]
-position = Vector2(479, -382)
-
-[node name="Bush6" parent="OverLayer" instance=ExtResource("7_yt606")]
-position = Vector2(-444, -36)
-
-[node name="Mountain" parent="OverLayer" instance=ExtResource("6_cu355")]
-position = Vector2(574, -318)
-
-[node name="Mountain2" parent="OverLayer" instance=ExtResource("6_cu355")]
-position = Vector2(772, -522)
-
-[node name="Frog" parent="OverLayer" instance=ExtResource("6_t7kfm")]
-position = Vector2(-126, -11)
-
-[node name="Frog2" parent="OverLayer" instance=ExtResource("6_t7kfm")]
-position = Vector2(137, -11)
-
-[node name="Frog3" parent="OverLayer" instance=ExtResource("6_t7kfm")]
-position = Vector2(-2, 87)
-
-[node name="Frog4" parent="OverLayer" instance=ExtResource("6_t7kfm")]
-position = Vector2(2, -102)
-
-[node name="Stone" parent="OverLayer" instance=ExtResource("2_03s5a")]
-position = Vector2(298, 39)
 
 [connection signal="timeout" from="Timers/EnemySpawnWait" to="." method="_on_enemy_spawn_wait_timeout"]
 [connection signal="timeout" from="Timers/GameOverWait" to="." method="_on_game_over_wait_timeout"]
