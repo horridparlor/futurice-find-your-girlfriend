@@ -62,6 +62,19 @@ const ENEMY_SPAWN_WAIT : Dictionary = {
 	9: 0.1
 }
 
+const VICTORY_MESSAGES : Dictionary = {
+	0: "SMILES",
+	1: "LAUGHS",
+	2: "HUGS",
+	3: "KISSES",
+	4: "SECRETS",
+	5: "PROMISES",
+	6: "STRESS",
+	7: "LOSS",
+	8: "DESPAIR",
+	9: "MARRIAGE"
+}
+
 var player : Player;
 var is_fading_instructions : bool;
 var game_started : bool;

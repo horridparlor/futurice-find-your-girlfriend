@@ -15,7 +15,7 @@ func spawn_level_buttons(levels_unlocked_ : int):
 	var level_button : LevelButton;
 	var current_position : Vector2 = Vector2(-2 * LEVEL_BUTTON_X, 0);
 	levels_unlocked = levels_unlocked_;
-	if levels_unlocked == GameplayEnums.LAST_LEVEL:
+	if levels_unlocked > GameplayEnums.LAST_LEVEL:
 		change_to_victory_nexus();
 	for i in range(10):
 		level_button = System.Instance.load_child(LEVEL_BUTTON_PATH, buttons_layer);

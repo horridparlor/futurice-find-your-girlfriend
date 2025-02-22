@@ -24,7 +24,7 @@ func open_level(level_index : int) -> void:
 	nexus.queue_free();
 
 func on_game_over(did_win : bool, level_index : int) -> void:
-	if did_win && level_index == save_data.levels_unlocked && level_index < GameplayEnums.LAST_LEVEL:
+	if did_win && level_index == save_data.levels_unlocked:
 		save_data.levels_unlocked += 1;
 		System.Json.write(save_data.to_json(), SAVE_FILE_NAME);
 	open_nexus();

@@ -87,7 +87,8 @@ func on_player_hit(is_girlfriend : bool) -> void:
 
 func on_victory():
 	did_win = true;
-	System.Instance.load_child(VICTORY_SCREEN_PATH, self);
+	var victory_screen : Node2D = System.Instance.load_child(VICTORY_SCREEN_PATH, self);
+	victory_screen.init(VICTORY_MESSAGES[level_index]);
 
 func on_death():
 	System.Instance.load_child(DEATH_SCREEN_PATH, self);
