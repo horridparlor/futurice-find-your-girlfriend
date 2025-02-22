@@ -8,14 +8,13 @@ extends Nexus
 func _ready() -> void:
 	title_layer.activate_animations();
 
-func init(save_data : SaveData):
+func on_init():
 	spawn_level_buttons(save_data.levels_unlocked);
 
 func spawn_level_buttons(levels_unlocked_ : int):
 	var level_button : LevelButton;
 	var current_position : Vector2 = Vector2(-2 * LEVEL_BUTTON_X, 0);
-	levels_unlocked = levels_unlocked_;
-	if levels_unlocked > GameplayEnums.LAST_LEVEL:
+	if save_data.levels_unlocked > GameplayEnums.LAST_LEVEL:
 		change_to_victory_nexus();
 	for i in range(10):
 		level_button = System.Instance.load_child(LEVEL_BUTTON_PATH, buttons_layer);
@@ -24,7 +23,7 @@ func spawn_level_buttons(levels_unlocked_ : int):
 		current_position.x += LEVEL_BUTTON_X;
 		if current_position.x > 2 * LEVEL_BUTTON_X:
 			current_position = Vector2(-2 * LEVEL_BUTTON_X, current_position.y + LEVEL_BUTTON_Y);
-		if i > levels_unlocked:
+		if i > save_data.levels_unlocked:
 			level_button.deactivate();
 		level_button.selected.connect(on_level_selected);
 
@@ -41,4 +40,4 @@ func _process(delta : float) -> void:
 		enter_last_unlocked_level();
 
 func enter_last_unlocked_level() -> void:
-	emit_signal("level_selected", min(levels_unlocked, GameplayEnums.LAST_LEVEL));
+	emit_signal("level_selected", min(save_data.previous_level_selected, GameplayEnums.LAST_LEVEL));

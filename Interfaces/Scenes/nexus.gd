@@ -8,7 +8,11 @@ const LEVEL_BUTTON_X : int = 360;
 const LEVEL_BUTTON_Y : int = 320;
 const VICTORY_THEME_PATH : String = "res://Assets/Music/VictoryTheme.mp3";
 
-var levels_unlocked : int;
+var save_data : SaveData;
 
-func init(save_data : SaveData):
+func on_init() -> void:
 	pass;
+
+func init(save_data_ : SaveData):
+	save_data = save_data_;
+	on_init();

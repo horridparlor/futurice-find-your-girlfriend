@@ -106,7 +106,7 @@ func on_init() -> void:
 	pass;
 
 func init(level_index_ : int) -> void:
-	level_index = level_index_
+	level_index = level_index_;
 	max_enemies = MAX_ENEMIES_PER_LEVEL[level_index];
 	chance_to_spawn_girlfriend = CHANCE_TO_SPAWN_GIRLFRIEND[level_index];
 	spawns_before_girlfriend = MIN_SPAWNS_BEFORE_GIRLFRIEND[level_index];

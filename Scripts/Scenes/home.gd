@@ -21,12 +21,15 @@ func open_level(level_index : int) -> void:
 	gameplay = System.Instance.load_child(GAMEPLAY_PATH, self);
 	gameplay.init(level_index);
 	gameplay.on_game_over.connect(on_game_over);
+	save_data.previous_level_selected = level_index;
 	nexus.queue_free();
 
 func on_game_over(did_win : bool, level_index : int) -> void:
-	if did_win && level_index == save_data.levels_unlocked:
-		save_data.levels_unlocked += 1;
-		System.Json.write(save_data.to_json(), SAVE_FILE_NAME);
+	if did_win:
+		if level_index == save_data.levels_unlocked:
+			save_data.levels_unlocked += 1;
+			System.Json.write(save_data.to_json(), SAVE_FILE_NAME);
+		save_data.previous_level_selected = save_data.levels_unlocked;
 	open_nexus();
 	gameplay.queue_free();
 
