@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://04preda4231y"]
+
+[ext_resource type="Script" path="res://Scripts/Nexus/level_button.gd" id="1_bu0hb"]
+[ext_resource type="StyleBox" uid="uid://cx0dp08ob14nw" path="res://Styles/Nexus/LefelButtonBackframe.tres" id="2_av2bw"]
+[ext_resource type="FontFile" uid="uid://c3vhrrc52vift" path="res://Assets/FontFiles/Montserrat/Montserrat-Bold.ttf" id="3_wxgr8"]
+[ext_resource type="Script" path="res://Scripts/Common/spring_button.gd" id="4_4w0me"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4xj4m"]
+size = Vector2(330, 240)
+
+[node name="LevelButton" type="Node2D"]
+script = ExtResource("1_bu0hb")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -165.0
+offset_top = -120.0
+offset_right = 165.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("2_av2bw")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_wxgr8")
+theme_override_font_sizes/font_size = 160
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Select" type="TouchScreenButton" parent="."]
+shape = SubResource("RectangleShape2D_4xj4m")
+script = ExtResource("4_4w0me")
+
+[connection signal="triggered" from="Select" to="." method="_on_select_triggered"]

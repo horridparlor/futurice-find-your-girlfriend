@@ -1,0 +1,79 @@
+[gd_scene load_steps=10 format=3 uid="uid://bajxf7b2jl4qt"]
+
+[ext_resource type="Script" path="res://Scripts/Scenes/nexus.gd" id="1_xhnkd"]
+[ext_resource type="StyleBox" uid="uid://c7nchk6bpufan" path="res://Styles/Nexus/NexusBackframe.tres" id="2_vwm7y"]
+[ext_resource type="Script" path="res://Interfaces/Common/glow_node.gd" id="3_8aum2"]
+[ext_resource type="FontFile" uid="uid://c3vhrrc52vift" path="res://Assets/FontFiles/Montserrat/Montserrat-Bold.ttf" id="3_lcr7j"]
+[ext_resource type="FontFile" uid="uid://ckd00l7rafrhj" path="res://Assets/FontFiles/Montserrat/Montserrat-MediumItalic.ttf" id="4_nikk2"]
+[ext_resource type="FontFile" uid="uid://d2quytvht0dbx" path="res://Assets/FontFiles/Montserrat/Montserrat-SemiBoldItalic.ttf" id="5_dgsul"]
+[ext_resource type="FontFile" uid="uid://di4abqxuqvl4h" path="res://Assets/FontFiles/Montserrat/Montserrat-ExtraBold.ttf" id="5_g8r4r"]
+[ext_resource type="FontFile" uid="uid://3kkavvgbrq0y" path="res://Assets/FontFiles/Montserrat/Montserrat-Medium.ttf" id="7_v2tmb"]
+[ext_resource type="AudioStream" uid="uid://cl7lmb0uj878w" path="res://Assets/Music/NexusTheme.mp3" id="9_ogxne"]
+
+[node name="Nexus" type="Node2D"]
+script = ExtResource("1_xhnkd")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 960.0
+offset_bottom = 540.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("2_vwm7y")
+
+[node name="TitleLayer" type="Node2D" parent="."]
+script = ExtResource("3_8aum2")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TitleLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -512.5
+offset_top = -457.5
+offset_right = 512.5
+offset_bottom = -142.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_lcr7j")
+theme_override_fonts/italics_font = ExtResource("4_nikk2")
+theme_override_fonts/bold_italics_font = ExtResource("5_dgsul")
+theme_override_font_sizes/bold_italics_font_size = 40
+theme_override_font_sizes/italics_font_size = 40
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "[center][i]Futurice – Game Jam [b]2025[/b][/i]
+Find your girlfriend[/center]"
+
+[node name="Label" type="Label" parent="."]
+offset_left = -870.0
+offset_top = -250.0
+offset_right = -554.0
+offset_bottom = -200.0
+theme_override_fonts/font = ExtResource("7_v2tmb")
+theme_override_font_sizes/font_size = 40
+text = "Level Selection"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 761.0
+offset_top = 493.0
+offset_right = 934.0
+offset_bottom = 524.0
+theme_override_fonts/font = ExtResource("5_g8r4r")
+theme_override_font_sizes/font_size = 24
+text = "by Eero Laine"
+
+[node name="ButtonsLayer" type="Node2D" parent="."]
+position = Vector2(0, -50)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_ogxne")
+autoplay = true
+parameters/looping = true

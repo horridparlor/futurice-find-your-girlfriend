@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://btbbdflf828s8"]
+
+[ext_resource type="Script" path="res://Scripts/Gameplay/ParticleEffects/halo_effect.gd" id="1_mrwrg"]
+[ext_resource type="Texture2D" uid="uid://besbxmx7e2ueb" path="res://Assets/Sprites/Particles/HaloParticle.png" id="2_ac7ij"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_w3xel"]
+particle_flag_disable_z = true
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 1.0
+emission_ring_radius = 1.0
+emission_ring_inner_radius = 0.0
+spread = 0.0
+angular_velocity_min = 720.0
+angular_velocity_max = 720.0
+orbit_velocity_min = 21.0
+orbit_velocity_max = 21.0
+gravity = Vector3(0, 0, 0)
+linear_accel_min = -2.23517e-06
+linear_accel_max = -2.23517e-06
+radial_accel_min = -2.23517e-06
+radial_accel_max = -2.23517e-06
+tangential_accel_min = -2.23517e-06
+tangential_accel_max = -2.23517e-06
+scale_min = 10.0
+scale_max = 10.0
+
+[node name="HaloEffect" type="Node2D"]
+script = ExtResource("1_mrwrg")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+amount = 128
+process_material = SubResource("ParticleProcessMaterial_w3xel")
+texture = ExtResource("2_ac7ij")
+lifetime = 0.2

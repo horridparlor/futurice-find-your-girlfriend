@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsn5xseawu7q6"]
+
+[ext_resource type="Script" path="res://Scripts/Gameplay/Actors/player.gd" id="1_4eej3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_op6y5"]
+size = Vector2(30, 30)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7t50s"]
+radius = 0.01
+
+[node name="Player" type="Node2D"]
+script = ExtResource("1_4eej3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ShootCooldown" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="HitBox" type="Area2D" parent="." groups=["Player"]]
+
+[node name="Collision" type="CollisionShape2D" parent="HitBox"]
+shape = SubResource("RectangleShape2D_op6y5")
+
+[node name="HaloArea" type="Area2D" parent="." groups=["Halo"]]
+
+[node name="Collision" type="CollisionShape2D" parent="HaloArea"]
+shape = SubResource("CircleShape2D_7t50s")
+
+[connection signal="timeout" from="ShootCooldown" to="." method="_on_shoot_cooldown_timeout"]
