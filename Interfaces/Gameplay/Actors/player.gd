@@ -5,17 +5,21 @@ const HALO_EFFECT_PATH : String = "res://Prefabs/Gameplay/ParticleEffects/halo_e
 
 var is_shooting;
 var halo_effect : HaloEffect;
+var shoot_speed : float = 1;
 
 func _ready() -> void:
 	movement_class = 3;
 	set_speed();
-	size = 40;
+	size_class = 40;
 
-func shoot() -> void:
+func alter_shoot_speed(multiplier : float) -> void:
+	pass;
+
+func shoot(multiplier : float) -> void:
 	is_shooting = true;
-	on_shoot();
+	on_shoot(multiplier);
 
-func on_shoot() -> void:
+func on_shoot(multiplier : float) -> void:
 	pass;
 
 func move_up(delta : float) -> void:

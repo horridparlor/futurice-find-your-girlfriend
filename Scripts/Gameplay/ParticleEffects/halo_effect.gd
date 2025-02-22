@@ -10,12 +10,12 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if !is_growing:
 		return;
-	particles.process_material.emission_shape_offset.x += SPEED * delta;
+	particles.process_material.emission_shape_offset.x += speed * delta;
 	emit_signal("halo_range", particles.process_material.emission_shape_offset.x);
-	if particles.process_material.emission_shape_offset.x >= MAX_SIZE:
-		particles.process_material.emission_shape_offset.x = MAX_SIZE;
+	if particles.process_material.emission_shape_offset.x >= max_size:
+		particles.process_material.emission_shape_offset.x = max_size;
 		is_growing = false;
-	modulate.a -= delta / 2;
+	modulate.a -= delta / fade_speed;
 	if modulate.a <= 0:
 		modulate.a = 0;
 		is_growing = false;

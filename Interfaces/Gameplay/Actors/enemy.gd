@@ -12,7 +12,7 @@ var color : GameplayEnums.EnemyColor = GameplayEnums.EnemyColor.YELLOW;
 var is_hit : bool;
 
 func _ready() -> void:
-	size = -40;
+	size_class = -40;
 	set_speed();
 
 func move(delta : float):
@@ -25,3 +25,6 @@ func on_death() -> void:
 
 func is_girlfriend() -> bool:
 	return color == GameplayEnums.EnemyColor.PINK;
+
+func scale_up(multiplier : float) -> void:
+	pass;

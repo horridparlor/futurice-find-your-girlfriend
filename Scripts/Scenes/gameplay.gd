@@ -7,8 +7,10 @@ extends Gameplay
 @onready var enemy_spawn_wait_timer : Timer = $Timers/EnemySpawnWait;
 @onready var game_over_wait_timer : Timer = $Timers/GameOverWait;
 @onready var stream_player : AudioStreamPlayer = $AudioStreamPlayer;
+@onready var backframe : ColorRect = $Backframe;
 
-func _ready() -> void:
+func on_init() -> void:
+	change_music();
 	spawn_player();
 
 func change_music():
@@ -18,6 +20,14 @@ func change_music():
 
 func spawn_player() -> void:
 	player = System.Instance.load_child(PLAYER_PATH, player_layer);
+	match level_index:
+		GameplayEnums.SLOW_LEVEL:
+			player.set_speed(1);
+		GameplayEnums.FAST_LEVEL:
+			player.set_speed(4);
+		GameplayEnums.RAPIDFIRE_LEVEL:
+			player.alter_shoot_speed(4);
+	
 
 func _process(delta : float) -> void:
 	if game_over:
@@ -53,6 +63,8 @@ func move_enemies(delta : float) -> void:
 		if !System.Instance.exists(e):
 			continue;
 		enemy = e;
+		if level_index in GameplayEnums.HUNTED_LEVELS:
+			enemy.target_position = player.position;
 		enemy.move(delta);
 
 func spawn_enemy() -> void:
@@ -60,6 +72,11 @@ func spawn_enemy() -> void:
 	var angle : float = randf() * TAU;
 	enemy.position = Vector2(cos(angle), sin(angle)) * System.Window_.y;
 	enemy.target_position = -enemy.position;
+	if level_index == GameplayEnums.CARS_LEVEL:
+		if System.Random.chance(2):
+			enemy.target_position.x = enemy.position.x;
+		else:
+			enemy.target_position.y = enemy.position.y;
 	enemy.fix_position();
 	if spawns_before_girlfriend > 0:
 		spawns_before_girlfriend -= 1;
@@ -71,8 +88,14 @@ func spawn_enemy() -> void:
 	enemy.player_hit.connect(on_player_hit);
 	enemy.movement_class = System.Random.item(ENEMY_SPEEDS[level_index]);
 	if enemy.is_girlfriend():
-		enemy.movement_class = min(2, enemy.movement_class);
+		enemy.movement_class = 2 if level_index == GameplayEnums.SLOW_LEVEL else min(2, enemy.movement_class);
 	enemy.set_speed();
+	match level_index:
+		GameplayEnums.GIANT_LEVEL:
+			enemy.scale_up(3);
+		GameplayEnums.SUPERSONIC_LEVEL:
+			if enemy.movement_class == 1:
+				enemy.scale_up(System.random.randf_range(1, 2));
 	enemies.append(enemy);
 	can_spawn_enemy = false;
 	enemy_spawn_wait_timer.wait_time = enemy_spawn_wait;
@@ -114,7 +137,7 @@ func handle_shooting() -> void:
 	if player.is_shooting:
 		return;
 	if Input.is_key_pressed(KEY_H):
-		player.shoot();
+		player.shoot(3 if level_index == GameplayEnums.SUPERMAN_LEVEL else 1);
 
 func _on_enemy_spawn_wait_timeout() -> void:
 	enemy_spawn_wait_timer.stop();

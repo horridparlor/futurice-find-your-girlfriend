@@ -16,22 +16,22 @@ const MAX_ENEMIES_PER_LEVEL : Dictionary = {
 	2: 20,
 	3: 33,
 	4: 25,
-	5: 42,
-	6: 56,
+	5: 120,
+	6: 76,
 	7: 69,
 	8: 47,
 	9: 100
 };
 
 const ENEMY_SPEEDS : Dictionary = {
-	0: [1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
+	0: [1, 1, 1, 1, 1, 1, 1, 1, 1, 0.5],
 	1: [1, 1, 1, 1, 1, 1, 2, 2, 2, 3],
 	2: [2, 2, 2, 2, 2, 2, 2, 2, 2, 3],
 	3: [1, 1, 1, 1, 1, 1, 2, 2, 2, 3],
 	4: [1, 1, 1, 1, 1, 1, 3, 3, 3, 4],
-	5: [1, 2, 2, 2, 2, 3, 3, 3, 3, 3],
-	6: [2, 3, 3, 3, 3, 3, 3, 3, 3, 3],
-	7: [1, 1, 1, 1, 3, 3, 3, 4, 4, 4],
+	5: [1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
+	6: [1, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+	7: [1, 1, 1, 1, 1, 1, 2, 3, 3, 3],
 	8: [1, 5, 5, 5, 5, 5, 5, 5, 5, 5],
 	9: [1, 1, 1, 2, 2, 3, 3, 4, 4, 5]
 }
@@ -39,14 +39,14 @@ const ENEMY_SPEEDS : Dictionary = {
 const CHANCE_TO_SPAWN_GIRLFRIEND : Dictionary = {
 	0: 2,
 	1: 4,
-	2: 5,
-	3: 6,
+	2: 0,
+	3: 5,
 	4: 7,
-	5: 9,
+	5: 40,
 	6: 12,
 	7: 14,
-	8: 16,
-	9: 18
+	8: 15,
+	9: 30
 }
 
 const MIN_SPAWNS_BEFORE_GIRLFRIEND : Dictionary = {
@@ -55,11 +55,11 @@ const MIN_SPAWNS_BEFORE_GIRLFRIEND : Dictionary = {
 	2: 5,
 	3: 6,
 	4: 8,
-	5: 10,
-	6: 12,
+	5: 50,
+	6: 4,
 	7: 15,
-	8: 18,
-	9: 20
+	8: 2,
+	9: 40
 }
 
 const ENEMY_SPAWN_WAIT : Dictionary = {
@@ -68,8 +68,8 @@ const ENEMY_SPAWN_WAIT : Dictionary = {
 	2: 1,
 	3: 0.8,
 	4: 0.6,
-	5: 0.5,
-	6: 0.4,
+	5: 0.02,
+	6: 0.05,
 	7: 0.3,
 	8: 0.2,
 	9: 0.1
@@ -102,7 +102,7 @@ var level_index : int;
 var did_win : bool;
 var enemy_spawn_wait : float;
 
-func change_music():
+func on_init() -> void:
 	pass;
 
 func init(level_index_ : int) -> void:
@@ -111,4 +111,4 @@ func init(level_index_ : int) -> void:
 	chance_to_spawn_girlfriend = CHANCE_TO_SPAWN_GIRLFRIEND[level_index];
 	spawns_before_girlfriend = MIN_SPAWNS_BEFORE_GIRLFRIEND[level_index];
 	enemy_spawn_wait = ENEMY_SPAWN_WAIT[level_index];
-	change_music();
+	on_init();
