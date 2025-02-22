@@ -8,6 +8,7 @@ const ENEMY_PATH : String = "res://Prefabs/Gameplay/Actors/enemy.tscn";
 const INSTRUCTIONS_FADING_SPEED : float = 1.1;
 const VICTORY_SCREEN_PATH : String = "res://Prefabs/Gameplay/EndScreens/victory_screen.tscn";
 const DEATH_SCREEN_PATH : String = "res://Prefabs/Gameplay/EndScreens/death_screen.tscn";
+const LAST_LEVEL_THEME_PATH : String = "res://Assets/Music/TanLines.mp3";
 
 const MAX_ENEMIES_PER_LEVEL : Dictionary = {
 	0: 4,
@@ -75,9 +76,13 @@ var level_index : int;
 var did_win : bool;
 var enemy_spawn_wait : float;
 
+func change_music():
+	pass;
+
 func init(level_index_ : int) -> void:
 	level_index = level_index_
 	max_enemies = MAX_ENEMIES_PER_LEVEL[level_index];
 	chance_to_spawn_girlfriend = CHANCE_TO_SPAWN_GIRLFRIEND[level_index];
 	spawns_before_girlfriend = MIN_SPAWNS_BEFORE_GIRLFRIEND[level_index];
 	enemy_spawn_wait = ENEMY_SPAWN_WAIT[level_index];
+	change_music();

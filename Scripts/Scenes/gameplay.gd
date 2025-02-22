@@ -6,9 +6,15 @@ extends Gameplay
 
 @onready var enemy_spawn_wait_timer : Timer = $Timers/EnemySpawnWait;
 @onready var game_over_wait_timer : Timer = $Timers/GameOverWait;
+@onready var stream_player : AudioStreamPlayer = $AudioStreamPlayer;
 
 func _ready() -> void:
 	spawn_player();
+
+func change_music():
+	if level_index == GameplayEnums.LAST_LEVEL:
+		stream_player.stream = load(LAST_LEVEL_THEME_PATH);
+		stream_player.play();
 
 func spawn_player() -> void:
 	player = System.Instance.load_child(PLAYER_PATH, player_layer);
