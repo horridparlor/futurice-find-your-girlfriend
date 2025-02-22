@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://bajxf7b2jl4qt"]
+[gd_scene load_steps=11 format=3 uid="uid://bajxf7b2jl4qt"]
 
 [ext_resource type="Script" path="res://Scripts/Scenes/nexus.gd" id="1_xhnkd"]
 [ext_resource type="StyleBox" uid="uid://c7nchk6bpufan" path="res://Styles/Nexus/NexusBackframe.tres" id="2_vwm7y"]
+[ext_resource type="StyleBox" uid="uid://bu1csol6xxsca" path="res://Styles/Nexus/NexusVictoryBackframe.tres" id="3_2drn1"]
 [ext_resource type="Script" path="res://Interfaces/Common/glow_node.gd" id="3_8aum2"]
 [ext_resource type="FontFile" uid="uid://c3vhrrc52vift" path="res://Assets/FontFiles/Montserrat/Montserrat-Bold.ttf" id="3_lcr7j"]
 [ext_resource type="FontFile" uid="uid://ckd00l7rafrhj" path="res://Assets/FontFiles/Montserrat/Montserrat-MediumItalic.ttf" id="4_nikk2"]
@@ -26,6 +27,20 @@ offset_bottom = 540.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = ExtResource("2_vwm7y")
+
+[node name="VictoryPanel" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 960.0
+offset_bottom = 540.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("3_2drn1")
 
 [node name="TitleLayer" type="Node2D" parent="."]
 script = ExtResource("3_8aum2")
