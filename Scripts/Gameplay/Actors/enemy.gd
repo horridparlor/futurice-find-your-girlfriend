@@ -5,5 +5,8 @@ extends Enemy
 func _on_hit_box_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Halo"):
 		color_rect.color = PINK_COLOR if is_girlfriend() else YELLOW_COLOR;
+		if is_hit:
+			on_death();	
+		is_hit = true;
 	elif area.is_in_group("Player"):
 		emit_signal("player_hit", is_girlfriend());

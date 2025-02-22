@@ -9,6 +9,7 @@ const YELLOW_COLOR = "e8e419";
 
 var target_position : Vector2;
 var color : GameplayEnums.EnemyColor = GameplayEnums.EnemyColor.YELLOW;
+var is_hit : bool;
 
 func _ready() -> void:
 	size = -40;
@@ -17,7 +18,10 @@ func _ready() -> void:
 func move(delta : float):
 	position = position.move_toward(target_position, speed * delta);
 	if System.Vectors.equal(position, target_position):
-		emit_signal("despawn", self);
+		on_death();
+		
+func on_death() -> void:
+	emit_signal("despawn", self);
 
 func is_girlfriend() -> bool:
 	return color == GameplayEnums.EnemyColor.PINK;
