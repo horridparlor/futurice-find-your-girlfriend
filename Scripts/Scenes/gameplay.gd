@@ -87,7 +87,8 @@ func spawn_enemy() -> void:
 	if spawns_before_girlfriend > 0:
 		spawns_before_girlfriend -= 1;
 	else:
-		if !girlfriend_exists && System.Random.chance(chance_to_spawn_girlfriend):
+		if (!girlfriend_exists or level_index == GameplayEnums.SLOW_LEVEL) \
+		&& System.Random.chance(chance_to_spawn_girlfriend):
 			enemy.color = GameplayEnums.EnemyColor.PINK;
 			girlfriend_exists = true;
 	enemy.despawn.connect(on_despawn_enemy);

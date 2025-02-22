@@ -1,3 +1,39 @@
-[gd_scene format=3 uid="uid://c6qaxoe17j6i2"]
+[gd_scene load_steps=3 format=3 uid="uid://c6qaxoe17j6i2"]
 
-[node name="Stage2Backdrops" type="Node2D"]
+[ext_resource type="PackedScene" uid="uid://blorkgnsg3tj2" path="res://Prefabs/Gameplay/Backdrops/bush.tscn" id="1_4aq52"]
+[ext_resource type="PackedScene" uid="uid://bj4f8aeon2n2d" path="res://Prefabs/Gameplay/Backdrops/mountain.tscn" id="2_5qrhh"]
+
+[node name="Stage5Backdrops" type="Node2D"]
+
+[node name="Bush" parent="." instance=ExtResource("1_4aq52")]
+position = Vector2(-2, -332)
+
+[node name="Bush2" parent="." instance=ExtResource("1_4aq52")]
+position = Vector2(0, -235)
+
+[node name="Bush3" parent="." instance=ExtResource("1_4aq52")]
+position = Vector2(0, -118)
+
+[node name="Bush4" parent="." instance=ExtResource("1_4aq52")]
+position = Vector2(2, 89)
+
+[node name="Bush5" parent="." instance=ExtResource("1_4aq52")]
+position = Vector2(-5, 468)
+
+[node name="Bush6" parent="." instance=ExtResource("1_4aq52")]
+position = Vector2(-169, -255)
+
+[node name="Bush7" parent="." instance=ExtResource("1_4aq52")]
+position = Vector2(-344, -251)
+
+[node name="Bush8" parent="." instance=ExtResource("1_4aq52")]
+position = Vector2(199, -260)
+
+[node name="Bush9" parent="." instance=ExtResource("1_4aq52")]
+position = Vector2(406, -262)
+
+[node name="Bush10" parent="." instance=ExtResource("1_4aq52")]
+position = Vector2(406, -262)
+
+[node name="Mountain" parent="." instance=ExtResource("2_5qrhh")]
+position = Vector2(-791, -417)

@@ -1,3 +1,120 @@
-[gd_scene format=3 uid="uid://d3jgcqnvmog5b"]
+[gd_scene load_steps=3 format=3 uid="uid://d3jgcqnvmog5b"]
 
-[node name="Stage2Backdrops" type="Node2D"]
+[ext_resource type="PackedScene" uid="uid://blorkgnsg3tj2" path="res://Prefabs/Gameplay/Backdrops/bush.tscn" id="1_on7qk"]
+[ext_resource type="PackedScene" uid="uid://bj4f8aeon2n2d" path="res://Prefabs/Gameplay/Backdrops/mountain.tscn" id="2_vu3e5"]
+
+[node name="Stage6Backdrops" type="Node2D"]
+
+[node name="Bush22" parent="." instance=ExtResource("1_on7qk")]
+position = Vector2(-851, 536)
+
+[node name="Bush23" parent="." instance=ExtResource("1_on7qk")]
+position = Vector2(238, -70)
+
+[node name="Bush24" parent="." instance=ExtResource("1_on7qk")]
+position = Vector2(-437, -39)
+
+[node name="Bush25" parent="." instance=ExtResource("1_on7qk")]
+position = Vector2(-436, -90)
+
+[node name="Bush26" parent="." instance=ExtResource("1_on7qk")]
+position = Vector2(-53, -133)
+
+[node name="Bush27" parent="." instance=ExtResource("1_on7qk")]
+position = Vector2(913, -319)
+
+[node name="Bush28" parent="." instance=ExtResource("1_on7qk")]
+position = Vector2(870, -53)
+
+[node name="Bush29" parent="." instance=ExtResource("1_on7qk")]
+position = Vector2(801, -124)
+
+[node name="Bush30" parent="." instance=ExtResource("1_on7qk")]
+position = Vector2(715, 69)
+
+[node name="Bush31" parent="." instance=ExtResource("1_on7qk")]
+position = Vector2(705, -105)
+
+[node name="Bush32" parent="." instance=ExtResource("1_on7qk")]
+position = Vector2(593, 47)
+
+[node name="Bush33" parent="." instance=ExtResource("1_on7qk")]
+position = Vector2(-891, -227)
+
+[node name="Bush34" parent="." instance=ExtResource("1_on7qk")]
+position = Vector2(-910, -365)
+
+[node name="Bush35" parent="." instance=ExtResource("1_on7qk")]
+position = Vector2(-975, -456)
+
+[node name="Bush36" parent="." instance=ExtResource("1_on7qk")]
+position = Vector2(-958, -99)
+
+[node name="Mountain" parent="." instance=ExtResource("2_vu3e5")]
+position = Vector2(321, -12)
+
+[node name="Mountain2" parent="." instance=ExtResource("2_vu3e5")]
+position = Vector2(-356, -46)
+
+[node name="Bush" parent="." instance=ExtResource("1_on7qk")]
+position = Vector2(-321, 24)
+
+[node name="Bush2" parent="." instance=ExtResource("1_on7qk")]
+position = Vector2(-397, 69)
+
+[node name="Bush3" parent="." instance=ExtResource("1_on7qk")]
+position = Vector2(-282, 87)
+
+[node name="Bush4" parent="." instance=ExtResource("1_on7qk")]
+position = Vector2(455, -239)
+
+[node name="Bush5" parent="." instance=ExtResource("1_on7qk")]
+position = Vector2(535, 220)
+
+[node name="Bush6" parent="." instance=ExtResource("1_on7qk")]
+position = Vector2(617, 307)
+
+[node name="Bush7" parent="." instance=ExtResource("1_on7qk")]
+position = Vector2(361, 478)
+
+[node name="Bush8" parent="." instance=ExtResource("1_on7qk")]
+position = Vector2(292, 544)
+
+[node name="Bush9" parent="." instance=ExtResource("1_on7qk")]
+position = Vector2(-123, -397)
+
+[node name="Bush10" parent="." instance=ExtResource("1_on7qk")]
+position = Vector2(-214, -493)
+
+[node name="Bush11" parent="." instance=ExtResource("1_on7qk")]
+position = Vector2(-226, -457)
+
+[node name="Bush12" parent="." instance=ExtResource("1_on7qk")]
+position = Vector2(-33, -532)
+
+[node name="Bush13" parent="." instance=ExtResource("1_on7qk")]
+position = Vector2(42, -457)
+
+[node name="Bush14" parent="." instance=ExtResource("1_on7qk")]
+position = Vector2(105, -539)
+
+[node name="Bush15" parent="." instance=ExtResource("1_on7qk")]
+position = Vector2(643, -278)
+
+[node name="Bush16" parent="." instance=ExtResource("1_on7qk")]
+position = Vector2(716, -401)
+
+[node name="Bush17" parent="." instance=ExtResource("1_on7qk")]
+position = Vector2(761, -298)
+
+[node name="Bush18" parent="." instance=ExtResource("1_on7qk")]
+position = Vector2(-549, -280)
+
+[node name="Bush19" parent="." instance=ExtResource("1_on7qk")]
+position = Vector2(-608, -142)
+
+[node name="Bush20" parent="." instance=ExtResource("1_on7qk")]
+position = Vector2(-765, 146)
+
+[node name="Bush21" parent="." instance=ExtResource("1_on7qk")]
+position = Vector2(460, -89)

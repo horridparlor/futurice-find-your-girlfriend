@@ -1,3 +1,213 @@
-[gd_scene format=3 uid="uid://dykl50huejlib"]
+[gd_scene load_steps=3 format=3 uid="uid://dykl50huejlib"]
 
-[node name="Stage2Backdrops" type="Node2D"]
+[ext_resource type="PackedScene" uid="uid://blorkgnsg3tj2" path="res://Prefabs/Gameplay/Backdrops/bush.tscn" id="1_71jut"]
+[ext_resource type="PackedScene" uid="uid://bj4f8aeon2n2d" path="res://Prefabs/Gameplay/Backdrops/mountain.tscn" id="2_0jupw"]
+
+[node name="Stage3Backdrops" type="Node2D"]
+
+[node name="Bush38" parent="." instance=ExtResource("1_71jut")]
+position = Vector2(-354, -271)
+
+[node name="Bush39" parent="." instance=ExtResource("1_71jut")]
+position = Vector2(-884, -431)
+
+[node name="Bush40" parent="." instance=ExtResource("1_71jut")]
+position = Vector2(-452, -518)
+
+[node name="Bush41" parent="." instance=ExtResource("1_71jut")]
+position = Vector2(127, -461)
+
+[node name="Bush42" parent="." instance=ExtResource("1_71jut")]
+position = Vector2(830, -448)
+
+[node name="Bush43" parent="." instance=ExtResource("1_71jut")]
+position = Vector2(912, -260)
+
+[node name="Bush44" parent="." instance=ExtResource("1_71jut")]
+position = Vector2(820, 372)
+
+[node name="Bush45" parent="." instance=ExtResource("1_71jut")]
+position = Vector2(924, 500)
+
+[node name="Bush46" parent="." instance=ExtResource("1_71jut")]
+position = Vector2(430, 542)
+
+[node name="Bush47" parent="." instance=ExtResource("1_71jut")]
+position = Vector2(-239, 512)
+
+[node name="Bush48" parent="." instance=ExtResource("1_71jut")]
+position = Vector2(-772, 65)
+
+[node name="Bush49" parent="." instance=ExtResource("1_71jut")]
+position = Vector2(-881, 21)
+
+[node name="Mountain16" parent="." instance=ExtResource("2_0jupw")]
+position = Vector2(-597, -305)
+
+[node name="Mountain17" parent="." instance=ExtResource("2_0jupw")]
+position = Vector2(-997, -414)
+
+[node name="Mountain18" parent="." instance=ExtResource("2_0jupw")]
+position = Vector2(-84, 523)
+
+[node name="Mountain19" parent="." instance=ExtResource("2_0jupw")]
+position = Vector2(-250, 609)
+
+[node name="Bush50" parent="." instance=ExtResource("1_71jut")]
+position = Vector2(-560, -240)
+
+[node name="Mountain" parent="." instance=ExtResource("2_0jupw")]
+position = Vector2(-466, -243)
+
+[node name="Mountain2" parent="." instance=ExtResource("2_0jupw")]
+position = Vector2(552, 4)
+
+[node name="Mountain3" parent="." instance=ExtResource("2_0jupw")]
+position = Vector2(554, 527)
+
+[node name="Mountain4" parent="." instance=ExtResource("2_0jupw")]
+position = Vector2(145, -377)
+
+[node name="Mountain5" parent="." instance=ExtResource("2_0jupw")]
+position = Vector2(-661, 56)
+
+[node name="Mountain6" parent="." instance=ExtResource("2_0jupw")]
+position = Vector2(-718, 360)
+
+[node name="Mountain7" parent="." instance=ExtResource("2_0jupw")]
+position = Vector2(-640, 484)
+
+[node name="Mountain8" parent="." instance=ExtResource("2_0jupw")]
+position = Vector2(-352, -470)
+
+[node name="Mountain9" parent="." instance=ExtResource("2_0jupw")]
+position = Vector2(-205, -334)
+
+[node name="Mountain10" parent="." instance=ExtResource("2_0jupw")]
+position = Vector2(927, -391)
+
+[node name="Mountain11" parent="." instance=ExtResource("2_0jupw")]
+position = Vector2(791, -260)
+
+[node name="Mountain12" parent="." instance=ExtResource("2_0jupw")]
+position = Vector2(613, -553)
+
+[node name="Mountain13" parent="." instance=ExtResource("2_0jupw")]
+position = Vector2(818, 258)
+
+[node name="Mountain14" parent="." instance=ExtResource("2_0jupw")]
+position = Vector2(920, 358)
+
+[node name="Mountain15" parent="." instance=ExtResource("2_0jupw")]
+position = Vector2(1008, 470)
+
+[node name="Bush" parent="." instance=ExtResource("1_71jut")]
+position = Vector2(-563, 118)
+
+[node name="Bush2" parent="." instance=ExtResource("1_71jut")]
+position = Vector2(248, 493)
+
+[node name="Bush3" parent="." instance=ExtResource("1_71jut")]
+position = Vector2(436, 217)
+
+[node name="Bush4" parent="." instance=ExtResource("1_71jut")]
+position = Vector2(409, 241)
+
+[node name="Bush5" parent="." instance=ExtResource("1_71jut")]
+position = Vector2(517, 132)
+
+[node name="Bush6" parent="." instance=ExtResource("1_71jut")]
+position = Vector2(537, 156)
+
+[node name="Bush7" parent="." instance=ExtResource("1_71jut")]
+position = Vector2(483, 158)
+
+[node name="Bush8" parent="." instance=ExtResource("1_71jut")]
+position = Vector2(508, 171)
+
+[node name="Bush9" parent="." instance=ExtResource("1_71jut")]
+position = Vector2(722, 408)
+
+[node name="Bush10" parent="." instance=ExtResource("1_71jut")]
+position = Vector2(823, 418)
+
+[node name="Bush11" parent="." instance=ExtResource("1_71jut")]
+position = Vector2(867, 470)
+
+[node name="Bush12" parent="." instance=ExtResource("1_71jut")]
+position = Vector2(843, 536)
+
+[node name="Bush13" parent="." instance=ExtResource("1_71jut")]
+position = Vector2(860, 26)
+
+[node name="Bush14" parent="." instance=ExtResource("1_71jut")]
+position = Vector2(961, -95)
+
+[node name="Bush15" parent="." instance=ExtResource("1_71jut")]
+position = Vector2(221, -159)
+
+[node name="Bush16" parent="." instance=ExtResource("1_71jut")]
+position = Vector2(100, -299)
+
+[node name="Bush17" parent="." instance=ExtResource("1_71jut")]
+position = Vector2(113, -281)
+
+[node name="Bush18" parent="." instance=ExtResource("1_71jut")]
+position = Vector2(168, -310)
+
+[node name="Bush19" parent="." instance=ExtResource("1_71jut")]
+position = Vector2(168, -292)
+
+[node name="Bush20" parent="." instance=ExtResource("1_71jut")]
+position = Vector2(242, -314)
+
+[node name="Bush21" parent="." instance=ExtResource("1_71jut")]
+position = Vector2(-241, -257)
+
+[node name="Bush22" parent="." instance=ExtResource("1_71jut")]
+position = Vector2(-392, -385)
+
+[node name="Bush23" parent="." instance=ExtResource("1_71jut")]
+position = Vector2(-908, -294)
+
+[node name="Bush24" parent="." instance=ExtResource("1_71jut")]
+position = Vector2(-842, -255)
+
+[node name="Bush25" parent="." instance=ExtResource("1_71jut")]
+position = Vector2(-956, -176)
+
+[node name="Bush26" parent="." instance=ExtResource("1_71jut")]
+position = Vector2(-700, -489)
+
+[node name="Bush27" parent="." instance=ExtResource("1_71jut")]
+position = Vector2(-676, -543)
+
+[node name="Bush28" parent="." instance=ExtResource("1_71jut")]
+position = Vector2(360, -474)
+
+[node name="Bush29" parent="." instance=ExtResource("1_71jut")]
+position = Vector2(-69, -541)
+
+[node name="Bush30" parent="." instance=ExtResource("1_71jut")]
+position = Vector2(-160, 61)
+
+[node name="Bush31" parent="." instance=ExtResource("1_71jut")]
+position = Vector2(-887, 239)
+
+[node name="Bush32" parent="." instance=ExtResource("1_71jut")]
+position = Vector2(-825, 432)
+
+[node name="Bush33" parent="." instance=ExtResource("1_71jut")]
+position = Vector2(-894, 440)
+
+[node name="Bush34" parent="." instance=ExtResource("1_71jut")]
+position = Vector2(-923, 477)
+
+[node name="Bush35" parent="." instance=ExtResource("1_71jut")]
+position = Vector2(-871, 531)
+
+[node name="Bush36" parent="." instance=ExtResource("1_71jut")]
+position = Vector2(-802, 553)
+
+[node name="Bush37" parent="." instance=ExtResource("1_71jut")]
+position = Vector2(-894, 43)

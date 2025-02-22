@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bj4f8aeon2n2d"]
+
+[ext_resource type="Texture2D" uid="uid://nokv5o35pxxd" path="res://Assets/Sprites/Backdrops/mountain.png" id="1_uuo40"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rwi7n"]
+radius = 78.5135
+height = 195.864
+
+[node name="Mountain" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_uuo40")
+
+[node name="Area2D" type="Area2D" parent="." groups=["Obstacle"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(2, -5)
+rotation = -1.67552
+shape = SubResource("CapsuleShape2D_rwi7n")
