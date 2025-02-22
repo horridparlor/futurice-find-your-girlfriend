@@ -41,4 +41,4 @@ func _process(delta : float) -> void:
 		enter_last_unlocked_level();
 
 func enter_last_unlocked_level() -> void:
-	emit_signal("level_selected", levels_unlocked);
+	emit_signal("level_selected", min(levels_unlocked, GameplayEnums.LAST_LEVEL));

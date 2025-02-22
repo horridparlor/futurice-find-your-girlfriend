@@ -69,6 +69,10 @@ func spawn_enemy() -> void:
 			girlfriend_exists = true;
 	enemy.despawn.connect(on_despawn_enemy);
 	enemy.player_hit.connect(on_player_hit);
+	enemy.movement_class = System.Random.item(ENEMY_SPEEDS[level_index]);
+	if enemy.is_girlfriend():
+		enemy.movement_class = min(2, enemy.movement_class);
+	enemy.set_speed();
 	enemies.append(enemy);
 	can_spawn_enemy = false;
 	enemy_spawn_wait_timer.wait_time = enemy_spawn_wait;
