@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bajxf7b2jl4qt"]
+[gd_scene load_steps=10 format=3 uid="uid://bajxf7b2jl4qt"]
 
 [ext_resource type="Script" path="res://Scripts/Scenes/nexus.gd" id="1_xhnkd"]
 [ext_resource type="StyleBox" uid="uid://c7nchk6bpufan" path="res://Styles/Nexus/NexusBackframe.tres" id="2_vwm7y"]
@@ -8,7 +8,6 @@
 [ext_resource type="FontFile" uid="uid://ckd00l7rafrhj" path="res://Assets/FontFiles/Montserrat/Montserrat-MediumItalic.ttf" id="4_nikk2"]
 [ext_resource type="FontFile" uid="uid://d2quytvht0dbx" path="res://Assets/FontFiles/Montserrat/Montserrat-SemiBoldItalic.ttf" id="5_dgsul"]
 [ext_resource type="FontFile" uid="uid://di4abqxuqvl4h" path="res://Assets/FontFiles/Montserrat/Montserrat-ExtraBold.ttf" id="5_g8r4r"]
-[ext_resource type="FontFile" uid="uid://3kkavvgbrq0y" path="res://Assets/FontFiles/Montserrat/Montserrat-Medium.ttf" id="7_v2tmb"]
 [ext_resource type="AudioStream" uid="uid://cl7lmb0uj878w" path="res://Assets/Music/NexusTheme.mp3" id="9_ogxne"]
 
 [node name="Nexus" type="Node2D"]
@@ -77,7 +76,7 @@ offset_right = -554.0
 offset_bottom = -200.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 1
-theme_override_fonts/font = ExtResource("7_v2tmb")
+theme_override_fonts/font = ExtResource("3_lcr7j")
 theme_override_font_sizes/font_size = 40
 text = "Level Selection"
 

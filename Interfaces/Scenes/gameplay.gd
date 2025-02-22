@@ -39,10 +39,10 @@ const ENEMY_SPEEDS : Dictionary = {
 const CHANCE_TO_SPAWN_GIRLFRIEND : Dictionary = {
 	0: 2,
 	1: 4,
-	2: 0,
+	2: 3,
 	3: 5,
-	4: 7,
-	5: 40,
+	4: 6,
+	5: 47,
 	6: 12,
 	7: 14,
 	8: 15,
@@ -52,13 +52,13 @@ const CHANCE_TO_SPAWN_GIRLFRIEND : Dictionary = {
 const MIN_SPAWNS_BEFORE_GIRLFRIEND : Dictionary = {
 	0: 1,
 	1: 3,
-	2: 5,
+	2: 2,
 	3: 6,
-	4: 8,
+	4: 7,
 	5: 50,
 	6: 4,
-	7: 15,
-	8: 2,
+	7: 12,
+	8: 5,
 	9: 40
 }
 
