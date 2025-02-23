@@ -24,14 +24,26 @@ func open_level(level_index : int) -> void:
 	gameplay = System.Instance.load_child(GAMEPLAY_PATH, scene_layer);
 	gameplay.init(level_index);
 	gameplay.on_game_over.connect(on_game_over);
+	gameplay.unlocked_secret_level.connect(on_secret_level_unlocked);
 	save_data.previous_level_selected = level_index;
-	nexus.queue_free();
+	if System.Instance.exists(nexus):
+		nexus.queue_free();
+
+func on_secret_level_unlocked(level_index : int) -> void:
+	save_data.secrets_unlocked[str(level_index)] = true;
+	store_save();
+	var previous_stage : Gameplay = gameplay;
+	open_level(level_index);
+	previous_stage.queue_free();
+
+func store_save() -> void:
+	System.Json.write(save_data.to_json(), SAVE_FILE_NAME);
 
 func on_game_over(did_win : bool, level_index : int) -> void:
 	if did_win:
 		if level_index == save_data.levels_unlocked:
 			save_data.levels_unlocked += 1;
-			System.Json.write(save_data.to_json(), SAVE_FILE_NAME);
+			store_save();
 		save_data.previous_level_selected = save_data.levels_unlocked;
 	open_nexus();
 	gameplay.queue_free();

@@ -31,7 +31,6 @@ color = Color(0.355914, 0.524489, 0.189138, 1)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_yybwi")
-autoplay = true
 parameters/looping = true
 
 [node name="InstructionsLayer" type="Node2D" parent="."]

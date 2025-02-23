@@ -3,6 +3,7 @@ extends Gameplay
 @onready var enemies_layer : Node2D = $EnemiesLayer;
 @onready var player_layer : Node2D = $PlayerLayer;
 @onready var instructions_layer : Node2D = $InstructionsLayer;
+@onready var instructions : RichTextLabel = $InstructionsLayer/RichTextLabel;
 
 @onready var enemy_spawn_wait_timer : Timer = $Timers/EnemySpawnWait;
 @onready var game_over_wait_timer : Timer = $Timers/GameOverWait;
@@ -16,12 +17,17 @@ func on_init() -> void:
 	spawn_backdrops();
 
 func spawn_backdrops() -> void:
+	if is_in_past_level():
+		backframe.color = PAST_LEVEL_BACKFRAME_COLOR;
+		instructions.text = PAST_LEVEL_INSTRUCTIONS;
 	System.Instance.load_child(BACKDROPS_PATH_PREFIX + str(level_index) + BACKDROPS_PATH_SUFFIX, backdrops_layer);
 
 func change_music():
 	if level_index == GameplayEnums.LAST_LEVEL:
 		stream_player.stream = load(LAST_LEVEL_THEME_PATH);
-		stream_player.play();
+	elif is_in_past_level():
+		stream_player.stream = load(PAST_LEVEL_THEME_PATH);
+	stream_player.play();
 
 func spawn_player() -> void:
 	player = System.Instance.load_child(PLAYER_PATH, player_layer);
@@ -30,6 +36,8 @@ func spawn_player() -> void:
 			player.set_speed(1);
 		GameplayEnums.FAST_LEVEL:
 			player.set_speed(4);
+		GameplayEnums.GHOSTS_SECRET_LEVEL:
+			player.set_speed(5);
 		GameplayEnums.RAPIDFIRE_LEVEL:
 			player.alter_shoot_speed(4);
 	player.died.connect(on_player_died);
@@ -87,15 +95,14 @@ func spawn_enemy() -> void:
 	if spawns_before_girlfriend > 0:
 		spawns_before_girlfriend -= 1;
 	else:
-		if (!girlfriend_exists or level_index == GameplayEnums.SLOW_LEVEL) \
-		&& System.Random.chance(chance_to_spawn_girlfriend):
-			enemy.color = GameplayEnums.EnemyColor.PINK;
-			girlfriend_exists = true;
+		roll_for_enemy_colors(enemy);
 	enemy.despawn.connect(on_despawn_enemy);
 	enemy.player_hit.connect(on_player_hit);
 	enemy.movement_class = System.Random.item(ENEMY_SPEEDS[level_index]);
 	if enemy.is_girlfriend():
 		enemy.movement_class = 2 if level_index == GameplayEnums.SLOW_LEVEL else min(2, enemy.movement_class);
+	enemy.set_is_in_past(is_in_past_level());
+	enemy.is_ghost = level_index == GameplayEnums.GHOSTS_SECRET_LEVEL;
 	enemy.set_speed();
 	match level_index:
 		GameplayEnums.GIANT_LEVEL:
@@ -103,10 +110,26 @@ func spawn_enemy() -> void:
 		GameplayEnums.SUPERSONIC_LEVEL:
 			if enemy.movement_class == 1:
 				enemy.scale_up(System.random.randf_range(1, 2));
+		GameplayEnums.GIANTS_SECRET_LEVEL:
+			enemy.scale_up(2.5);
 	enemies.append(enemy);
 	can_spawn_enemy = false;
 	enemy_spawn_wait_timer.wait_time = enemy_spawn_wait;
 	enemy_spawn_wait_timer.start();
+
+func roll_for_enemy_colors(enemy : Enemy) -> void:
+	if becomes_blue(enemy):
+		return;
+	if (!girlfriend_exists or level_index == GameplayEnums.SLOW_LEVEL) \
+	&& System.Random.chance(chance_to_spawn_girlfriend):
+		enemy.color = GameplayEnums.EnemyColor.PINK;
+		girlfriend_exists = true;
+
+func becomes_blue(enemy : Enemy) -> bool:
+	if chance_to_spawn_secret == 0 or !System.Random.chance(chance_to_spawn_secret):
+		return false;
+	enemy.color = GameplayEnums.EnemyColor.BLUE;
+	return true;
 
 func on_despawn_enemy(enemy : Enemy) -> void:
 	if enemy.is_girlfriend():
@@ -115,22 +138,34 @@ func on_despawn_enemy(enemy : Enemy) -> void:
 	enemy.queue_free();
 
 func on_player_died() -> void:
-	on_player_hit(false);
+	on_player_hit();
 
-func on_player_hit(is_girlfriend : bool) -> void:
+func on_player_hit(girlfriend_state : GameplayEnums.GirlfriendState = GameplayEnums.GirlfriendState.NO) -> void:
 	if game_over:
 		return;
 	game_over = true;
-	on_victory() if is_girlfriend else on_death();
+	match girlfriend_state:
+		GameplayEnums.GirlfriendState.YES:
+			on_victory();
+		GameplayEnums.GirlfriendState.NO:
+			on_death();
+		GameplayEnums.GirlfriendState.LATE:
+			on_secret_level_unlocked();
 	game_over_wait_timer.start();
 
 func on_victory():
 	did_win = true;
-	var victory_screen : Node2D = System.Instance.load_child(VICTORY_SCREEN_PATH, self);
+	var victory_screen : Node2D = System.Instance.load_child(
+		SECRET_LEVEL_UNLOCK_SCREEN_PATH if is_in_past_level() else VICTORY_SCREEN_PATH, self);
 	victory_screen.init(VICTORY_MESSAGES[level_index]);
 
 func on_death():
 	System.Instance.load_child(DEATH_SCREEN_PATH, self);
+
+func on_secret_level_unlocked():
+	did_unlock_secret_level = true;
+	var unlock_screen : Node2D = System.Instance.load_child(SECRET_LEVEL_UNLOCK_SCREEN_PATH, self);
+	unlock_screen.init(SECRET_LEVEL_UNLOCK_MESSAGES[secret_to_spawn]);
 
 func check_if_game_started() -> bool:
 	return Input.is_action_pressed("ui_up") or Input.is_key_pressed(KEY_W) or \
@@ -157,4 +192,7 @@ func _on_enemy_spawn_wait_timeout() -> void:
 
 func _on_game_over_wait_timeout() -> void:
 	game_over_wait_timer.stop();
+	if did_unlock_secret_level:
+		emit_signal("unlocked_secret_level", secret_to_spawn);
+		return;
 	emit_signal("on_game_over", did_win, level_index);

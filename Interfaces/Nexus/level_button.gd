@@ -6,6 +6,9 @@ signal selected(level_index)
 var level_index : int;
 var is_active : bool = true;
 
+func _ready() -> void:
+	activate_animations();
+
 func set_level(level : int):
 	level_index = level;
 	on_set_level();

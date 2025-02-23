@@ -8,12 +8,13 @@ extends Nexus
 func _ready() -> void:
 	title_layer.activate_animations();
 
-func on_init():
+func on_init() -> void:
 	spawn_level_buttons(save_data.levels_unlocked);
+	spawn_secret_level_buttons(save_data.secrets_unlocked);
 
-func spawn_level_buttons(levels_unlocked_ : int):
+func spawn_level_buttons(levels_unlocked_ : int) -> void:
 	var level_button : LevelButton;
-	var current_position : Vector2 = Vector2(-2 * LEVEL_BUTTON_X, 0);
+	var current_position : Vector2 = Vector2(-2 * LEVEL_BUTTON_X, LEVEL_BUTTON_START_Y);
 	if save_data.levels_unlocked > GameplayEnums.LAST_LEVEL:
 		change_to_victory_nexus();
 	for i in range(10):
@@ -25,6 +26,21 @@ func spawn_level_buttons(levels_unlocked_ : int):
 			current_position = Vector2(-2 * LEVEL_BUTTON_X, current_position.y + LEVEL_BUTTON_Y);
 		if i > save_data.levels_unlocked:
 			level_button.deactivate();
+		level_button.selected.connect(on_level_selected);
+
+func spawn_secret_level_buttons(secrets_unlocked : Dictionary) -> void:
+	var level_button : LevelButton;
+	var current_position : Vector2 = Vector2(-1 * SECRET_LEVEL_BUTTON_X, SECRET_LEVEL_BUTTON_Y);
+	var secrets : Array = secrets_unlocked.keys();
+	secrets.sort();
+	for key in secrets:
+		if !secrets_unlocked[key]:
+			current_position.x += SECRET_LEVEL_BUTTON_X;
+			continue;
+		level_button = System.Instance.load_child(SECRET_LEVEL_BUTTON_PATH, buttons_layer);
+		level_button.position = current_position;
+		current_position.x += SECRET_LEVEL_BUTTON_X;
+		level_button.set_level(int(key));
 		level_button.selected.connect(on_level_selected);
 
 func change_to_victory_nexus() -> void:

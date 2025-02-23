@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dsn5xseawu7q6"]
+[gd_scene load_steps=5 format=3 uid="uid://dsn5xseawu7q6"]
 
 [ext_resource type="Script" path="res://Scripts/Gameplay/Actors/player.gd" id="1_4eej3"]
+[ext_resource type="Texture2D" uid="uid://dekmvablgp6qe" path="res://Assets/Sprites/Actors/player.png" id="2_u68d6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_op6y5"]
 size = Vector2(30, 30)
@@ -12,8 +13,11 @@ radius = 0.01
 script = ExtResource("1_4eej3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -3)
+texture = ExtResource("2_u68d6")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5

@@ -1,0 +1,292 @@
+[gd_scene load_steps=3 format=3 uid="uid://dc0lyuqsxbnne"]
+
+[ext_resource type="PackedScene" uid="uid://b73t3w1fv8wwt" path="res://Prefabs/Gameplay/Backdrops/berry_bush.tscn" id="2_yrwyi"]
+[ext_resource type="PackedScene" uid="uid://btxnuk3n3ckek" path="res://Prefabs/Gameplay/Backdrops/stone.tscn" id="4_jc62w"]
+
+[node name="Stage-2Backdrops" type="Node2D"]
+
+[node name="Stone42" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(-776, -415)
+
+[node name="Stone82" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(-693, 522)
+
+[node name="Stone43" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(-152, -280)
+
+[node name="Stone44" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(183, -255)
+
+[node name="Stone45" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(423, -371)
+
+[node name="Stone46" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(718, -417)
+
+[node name="Stone47" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(753, -306)
+
+[node name="Stone48" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(761, -90)
+
+[node name="Stone49" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(713, 32)
+
+[node name="Stone50" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(861, 111)
+
+[node name="Stone51" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(850, 136)
+
+[node name="Stone52" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(791, 136)
+
+[node name="Stone53" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(624, 219)
+
+[node name="Stone54" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(597, 284)
+rotation = 0.019582
+
+[node name="Stone55" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(98.9999, -103)
+rotation = 0.019582
+
+[node name="Stone56" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(-401, -98)
+rotation = 0.019582
+
+[node name="Stone57" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(-474, -295)
+rotation = 0.019582
+
+[node name="Stone58" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(-406, -424)
+rotation = 0.019582
+
+[node name="Stone59" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(-166, -462)
+rotation = 0.019582
+
+[node name="Stone60" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(210, -449)
+rotation = 0.019582
+
+[node name="Stone61" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(285, -355)
+rotation = 0.019582
+
+[node name="Stone62" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(564, -442)
+rotation = 0.019582
+
+[node name="Stone63" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(583, -283)
+rotation = 0.019582
+
+[node name="Stone64" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(373, 320)
+rotation = 0.019582
+
+[node name="Stone65" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(-268, 336)
+rotation = 0.019582
+
+[node name="Stone66" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(-85, 238)
+rotation = 0.019582
+
+[node name="Stone67" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(71, 238)
+rotation = 0.019582
+
+[node name="Stone68" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(87, 338)
+rotation = 0.019582
+
+[node name="Stone69" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(-223, 238)
+rotation = 0.019582
+
+[node name="Stone70" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(10, 124)
+rotation = 0.019582
+
+[node name="Stone71" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(-12, 537)
+rotation = 0.019582
+
+[node name="Stone72" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(958, 243)
+rotation = 0.019582
+
+[node name="Stone73" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(929, 213)
+rotation = 0.019582
+
+[node name="Stone74" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(-917, 278)
+rotation = 0.019582
+
+[node name="Stone75" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(-966, 307)
+rotation = 0.019582
+
+[node name="Stone76" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(-245, -512)
+rotation = 0.019582
+
+[node name="Stone77" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(418, -537)
+rotation = 0.019582
+
+[node name="Stone78" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(882, -501)
+rotation = 0.019582
+
+[node name="Stone79" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(974, -75.9999)
+rotation = 0.019582
+
+[node name="Stone80" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(-919, 20)
+rotation = 0.019582
+
+[node name="Stone81" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(-838, -517)
+rotation = -0.102283
+
+[node name="BerryBush" parent="." instance=ExtResource("2_yrwyi")]
+position = Vector2(-747, -412)
+
+[node name="BerryBush2" parent="." instance=ExtResource("2_yrwyi")]
+position = Vector2(-642, -541)
+
+[node name="BerryBush3" parent="." instance=ExtResource("2_yrwyi")]
+position = Vector2(-175, -344)
+
+[node name="BerryBush4" parent="." instance=ExtResource("2_yrwyi")]
+position = Vector2(507, 388)
+
+[node name="Stone" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(-202, -166)
+
+[node name="Stone2" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(158, -240)
+
+[node name="Stone3" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(263, -45)
+
+[node name="Stone4" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(156, 85)
+
+[node name="Stone5" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(-112, 82)
+
+[node name="Stone6" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(-237, 28)
+
+[node name="Stone7" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(-357, -238)
+
+[node name="Stone8" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(22, -339)
+
+[node name="Stone9" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(419, -257)
+
+[node name="Stone10" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(432, -90)
+
+[node name="Stone11" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(381, 62)
+
+[node name="Stone12" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(381, 62)
+
+[node name="Stone13" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(591, 226)
+
+[node name="Stone14" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(427, 202)
+
+[node name="Stone15" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(-448, 270)
+
+[node name="Stone16" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(-435, 151)
+
+[node name="Stone17" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(-532, 70)
+
+[node name="Stone18" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(-553, -41)
+
+[node name="Stone19" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(-532, 367)
+
+[node name="Stone20" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(-478, 461)
+
+[node name="Stone21" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(-322, 472)
+
+[node name="Stone22" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(-119, 470)
+
+[node name="Stone23" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(51, 470)
+
+[node name="Stone24" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(241, 480)
+
+[node name="Stone25" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(403, 472)
+
+[node name="Stone26" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(625, 472)
+
+[node name="Stone27" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(654, 359)
+
+[node name="Stone28" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(764, 237)
+
+[node name="Stone29" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(805, 367)
+
+[node name="Stone30" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(843, 467)
+
+[node name="Stone31" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(-624, 254)
+
+[node name="Stone32" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(-729, 335)
+
+[node name="Stone33" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(-680, 394)
+
+[node name="Stone34" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(-774, 450)
+
+[node name="Stone35" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(-896, 288)
+
+[node name="Stone36" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(-801, 151)
+
+[node name="Stone37" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(-796, -36)
+
+[node name="Stone38" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(-798, -133)
+
+[node name="Stone39" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(-742, -219)
+
+[node name="Stone40" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(-837, -282)
+
+[node name="Stone41" parent="." instance=ExtResource("4_jc62w")]
+position = Vector2(-851, -355)
