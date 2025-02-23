@@ -81,7 +81,7 @@ const MIN_SPAWNS_BEFORE_GIRLFRIEND : Dictionary = {
 	8: 5,
 	9: 40,
 	
-	-1: 20,
+	-1: 15,
 	-2: 5,
 	-3: 20
 }
